@@ -2,17 +2,12 @@
 <%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <%@ Register assembly="Microsoft.ReportViewer.WebForms" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server">
-   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" Runat="Server">
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    
-<rsweb:ReportViewer ID="ReportViewer1" runat="server" BackColor="" ClientIDMode="AutoID" HighlightBackgroundColor="" InternalBorderColor="204, 204, 204" InternalBorderStyle="Solid" InternalBorderWidth="0px" LinkActiveColor="" LinkActiveHoverColor="" LinkDisabledColor="" PrimaryButtonBackgroundColor="" PrimaryButtonForegroundColor="" PrimaryButtonHoverBackgroundColor="" PrimaryButtonHoverForegroundColor="" SecondaryButtonBackgroundColor="" SecondaryButtonForegroundColor="" SecondaryButtonHoverBackgroundColor="" SecondaryButtonHoverForegroundColor="" SplitterBackColor="Aqua" ToolbarDividerColor="" ToolbarForegroundColor="" ToolbarForegroundDisabledColor="" ToolbarHoverBackgroundColor="" ToolbarHoverForegroundColor="" ToolBarItemBorderColor="" ToolBarItemBorderStyle="Solid" ToolBarItemBorderWidth="1px" ToolBarItemHoverBackColor="" ToolBarItemPressedBorderColor="51, 102, 153" ToolBarItemPressedBorderStyle="Solid" ToolBarItemPressedBorderWidth="1px" ToolBarItemPressedHoverBackColor="153, 187, 226" Width="800px" EnableTheming="True" BorderStyle="None" ExportContentDisposition="AlwaysAttachment" Height="88px" SizeToReportContent="True" ZoomPercent="80">
+<div class="main-content">
+<rsweb:ReportViewer ID="ReportViewer1" runat="server" ProcessingMode="Local" Width="100%" Height="800px" ShowPrintButton="true" ShowExportControls="true" ShowToolBar="true" AsyncRendering="False">
   <ServerReport ReportPath="" ReportServerUrl="" />
         <LocalReport ReportPath="App_Code\Report.rdlc">
             <DataSources>
@@ -20,6 +15,8 @@
             </DataSources>
         </LocalReport>
 </rsweb:ReportViewer>
+    </div>
+    <div class="clear-fix" />
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:quizConnectionString %>" SelectCommand="SELECT [email], [name], [phone], [position], [BH], [CH], [PD], [GR], [PB], [lastupdated] FROM [quiz_responses] WHERE ([id] = @id)">
         <SelectParameters>
             <asp:QueryStringParameter Name="id" QueryStringField="responseId" Type="Int32" />

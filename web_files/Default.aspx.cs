@@ -298,7 +298,7 @@ Kính chúc anh chị nắm vững kiến thức đã học, thực hành tốt 
 Ban Tổ Chức Sự Kiện BS-RK <br/>";
                     //    }
                     //}
-
+                    Response.Redirect("~/Admin/TestResult.aspx?responseid=" + success);
                     
                     btnsubmit.Visible = false;
                     questionsdiv.Visible = false;
