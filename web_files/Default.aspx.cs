@@ -99,7 +99,7 @@ public partial class _Default : Page
     protected void BindQuestions()
     {
         DataTable dTable = new DataTable();
-        SqlCommand getquestions = new SqlCommand("select top 6 id, title from " + quizquestionstable + " where quizid=@quizid order by questionorder ASC");
+        SqlCommand getquestions = new SqlCommand("select id, title from " + quizquestionstable + " where quizid=@quizid order by questionorder ASC");
         getquestions.Parameters.AddWithValue("quizid", quizId);
 
         db getquestionslist = new db();
@@ -258,11 +258,11 @@ public partial class _Default : Page
                     //}
                     SqlCommand updateDogType = new SqlCommand(@"UPDATE [dbo].[quiz_responses]
                                                                SET 
-		                                                            [PB] =@PB,
-		                                                            [GR] = @GR,
-		                                                            [PD] = @PD,
-		                                                            [CH] = @CH,
-		                                                            [BH] = @BH
+		                                                            [PB] =@PB/30*100,
+		                                                            [GR] = @GR/30*100,
+		                                                            [PD] = @PD/30*100,
+		                                                            [CH] = @CH/30*100,
+		                                                            [BH] = @BH/30*100
                                                              WHERE Id = @responseId");
                     updateDogType.Parameters.AddWithValue("PB", dogType.Rows[0].Field<decimal>(0));
                     updateDogType.Parameters.AddWithValue("GR", dogType.Rows[0].Field<decimal>(1));
@@ -298,7 +298,7 @@ Kính chúc anh chị nắm vững kiến thức đã học, thực hành tốt 
 Ban Tổ Chức Sự Kiện BS-RK <br/>";
                     //    }
                     //}
-                    Response.Redirect("~/Admin/Report.aspx?responseid=" + success.ToString());
+
                     
                     btnsubmit.Visible = false;
                     questionsdiv.Visible = false;
