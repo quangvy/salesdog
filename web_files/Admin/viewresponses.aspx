@@ -55,7 +55,7 @@
                         <asp:Label ID="Label7" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "lastupdated","{0:dd-MMM-yy}")%>' ForeColor="Green" Font-Bold="true"></asp:Label>
                     </td>
                     <td style="height: 25px; padding-left: 10px;">
-                        <asp:LinkButton ID="btnReport" PostBackUrl='<%#"~/Admin/Result.aspx?responseid=" + Eval("id")%>' runat="server" Text="View report" />
+                        <asp:LinkButton ID="btnReport" PostBackUrl='<%#"~/Admin/TestResult.aspx?responseid=" + Eval("id")%>' runat="server" Text="View report" />
                     </td>
                 </tr>
             </ItemTemplate>
