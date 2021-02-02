@@ -21,7 +21,7 @@ public class emailer
         
 	}
 
-    public string contacthelp(string name, string mailsender, string mailreceiver, string mailmessage)
+    public string contacthelp(string name, string Fname, string mailsender, string mailreceiver, string mailmessage)
     {
         MailMessage message = new MailMessage();
 
@@ -42,7 +42,7 @@ public class emailer
                                 "<div id='wrapper'>" +
                                     "<div id='content'>" +
                                         "<p>" +
-                                           "Hello " + name + ",<br /><br />" +
+                                           "Hello " + name +" "+ Fname+ ",<br /><br />" +
                                            "Thanks for completing the quiz.<br /><br />" +                                           
                                         "</p>" +
                                     "</div>" +

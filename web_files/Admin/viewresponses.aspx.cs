@@ -64,7 +64,7 @@ public partial class Admin_viewresponses : System.Web.UI.Page
     protected void bindentries()
     {
         DataTable dTable = new DataTable();
-        SqlCommand getresponses = new SqlCommand("select id, email, name, phone, pb, gr, pd, ch, bh ,lastupdated from " + quizresponsestable + " where quizid=@quizid");
+        SqlCommand getresponses = new SqlCommand("select id, email, name, Fname, phone, pb, gr, pd, ch, bh ,lastupdated from " + quizresponsestable + " where quizid=@quizid");
         getresponses.Parameters.AddWithValue("quizid", quizId);
 
         db getresponseslist = new db();

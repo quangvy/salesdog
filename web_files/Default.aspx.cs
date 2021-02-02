@@ -122,6 +122,7 @@ public partial class _Default : Page
         SqlDataReader dReader;
         string email = "";
         string name = "";
+        string Fname = "";
         string phone = "";
         string position = "";
         string selectedanswer = "";
@@ -138,6 +139,7 @@ public partial class _Default : Page
         {
             email = txtemail.Text.Trim();
             name = txtname.Text.Trim();
+            Fname = txtFname.Text.Trim();
             phone = txtPhone.Text.Trim();
             position = txtPosition.Text.Trim();
 
@@ -160,11 +162,12 @@ public partial class _Default : Page
             }
             else
             {
-                SqlCommand insertentrycmd = new SqlCommand("insert into " + quizresponsestable + " (quizid, email, name, phone, position, q1,q2,q3,q4,q5,q6, lastupdated) values (@quizid, @email, @name,@phone,@position,@q1,@q2,@q3,@q4,@q5,@q6, @lastupdated);SELECT CAST(scope_identity() AS int)");
+                SqlCommand insertentrycmd = new SqlCommand("insert into " + quizresponsestable + " (quizid, email, name,Fname, phone, position, q1,q2,q3,q4,q5,q6, lastupdated) values (@quizid, @email, @name,@Fname,@phone,@position,@q1,@q2,@q3,@q4,@q5,@q6, @lastupdated);SELECT CAST(scope_identity() AS int)");
                 insertentrycmd.Parameters.AddWithValue("quizid", quizId);
                 insertentrycmd.Parameters.AddWithValue("email", email);
                 insertentrycmd.Parameters.AddWithValue("phone", phone);
                 insertentrycmd.Parameters.AddWithValue("name", name);
+                insertentrycmd.Parameters.AddWithValue("Fname", Fname);
                 insertentrycmd.Parameters.AddWithValue("position", position);
                 insertentrycmd.Parameters.AddWithValue("lastupdated", updatedate);
                 int questionCount = 1;
@@ -299,7 +302,7 @@ Ban Tổ Chức Sự Kiện BS-RK <br/>";
                     //    }
                     //}
                     Response.Redirect("~/Admin/TestResult.aspx?responseid=" + success);
-                    
+
                     btnsubmit.Visible = false;
                     questionsdiv.Visible = false;
                 }

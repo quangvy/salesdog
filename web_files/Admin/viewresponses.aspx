@@ -13,6 +13,7 @@
             <HeaderTemplate>
                 <table style="width: 100%">
                     <tr style="background-color: Gray; color: White;">
+                        <td style="height: 25px; padding-left: 10px; font-weight: bold;">Fname</td>
                         <td style="height: 25px; padding-left: 10px; font-weight: bold;">Name</td>
                         <td style="height: 25px; padding-left: 10px; font-weight: bold;">Email</td>
                         <td style="height: 25px; padding-left: 10px; font-weight: bold;">Phone</td>
@@ -29,6 +30,9 @@
                 <tr style="background-color: #ffffff;">
                     <td style="height: 25px; padding-left: 10px;">
                         <asp:Label ID="lblsalonname" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "name")%>' Font-Bold="true"></asp:Label>
+                    </td>
+                    <td style="height: 25px; padding-left: 10px;">
+                        <asp:Label ID="lblFname" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "Fname")%>' Font-Bold="true"></asp:Label>
                     </td>
                     <td style="height: 25px; padding-left: 10px;">
                         <asp:Label ID="lblemail" runat="server" Text='<%# DataBinder.Eval(Container.DataItem, "email")%>' Font-Bold="true"></asp:Label>

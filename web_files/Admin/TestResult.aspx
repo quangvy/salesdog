@@ -15,13 +15,13 @@
   <ServerReport ReportPath="" ReportServerUrl="" />
         <LocalReport ReportPath="App_Code\Report.rdlc">
             <DataSources>
-                <rsweb:ReportDataSource DataSourceId="SqlDataSource1" Name="type" />
+                <rsweb:ReportDataSource DataSourceId="SqlDataSource1" Name="DataSet1" />
             </DataSources>
         </LocalReport>
 </rsweb:reportviewer>
         </div>
         <div class="clear-fix" />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:quizConnectionString %>" SelectCommand="SELECT [email], [name], [phone], [position], [BH], [CH], [PD], [GR], [PB], [lastupdated] FROM [quiz_responses] WHERE ([id] = @id)">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:quizConnectionString %>" SelectCommand="SELECT [email], [name], [Fname], [phone], [position], [BH], [CH], [PD], [GR], [PB], [lastupdated] FROM [quiz_responses] WHERE ([id] = @id)">
             <SelectParameters>
                 <asp:QueryStringParameter Name="id" QueryStringField="responseId" Type="Int32" />
             </SelectParameters>
